@@ -1,0 +1,16 @@
+stylesheets = [ "sizes.css", "theme-light.css", "default.css", "responsive.css"  ]
+rootstylesheets = [ "reset.css","fonts.css","layout.css" ]
+
+branding = "Default Theme"
+
+[nav]
+file = "nav.md"
+
+[header]
+file = "header.md"
+
+[footer]
+file = "footer.md"
+
+[sidebar]
+file = "sidebar.md"

@@ -1,0 +1,9 @@
+Language = "en"
+Theme = ""
+BaseDir = ""
+Publish = ".pub"
+ThemeDir = ".mb/themes"
+#Ganalytics = "UA-152078779-1"
+ExcludeDirs = [ ".mb". ".sample", ".common"]
+
+

@@ -16,10 +16,6 @@
   # Default build command.
   command = "./mb build"
 
-  # Directory with the serverless Lambda functions to deploy to AWS.
-  # TC: OK just to comment this out if it's not used?
-  # functions = "project/functions/"
-
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
 # TC: I have no idea how this differs from the above.
@@ -34,23 +30,6 @@
 [context.deploy-preview]
   publish = ".pub"
 
-# Here is another way to define context specific environment variables.
-[context.deploy-preview.environment]
-# TC: OK to comment this out?
-#  ACCESS_TOKEN = "not so secret"
-
-# Branch Deploy context: all deploys that are not from a pull/merge request or
-# from the Production branch will inherit these settings.
-#[context.branch-deploy]
-# TC: OK to comment this out?
-#  command = "echo branch"
-# [context.branch-deploy.environment]
-# TC: OK to comment this out?
-#  NODE_ENV = "development"
-
-# Specific branch context: all deploys from this specific branch will inherit
-# these settings.
-# TC: I have no idea how this differs from the above.
 [context.staging] # 'staging' is a branch name
   command = "./mb build"
   # TC: Left this as is
@@ -67,18 +46,9 @@
 # For context-specific rules, use _headers or _redirects files, which are
 # PER-DEPLOY.
 
-# A basic redirect rule
-#[[redirects]]
-  # TC: Removed
-  # from = "/*"
-  # to = "/blog/:splat"
-
 # A redirect rule with all the supported properties
 # TC: Left untouched
 [[redirects]]
-  from = "/old-path"
-  to = "/new-path"
-
   # The default HTTP status code is 301, but you can define a different one.
   status = 302
 
@@ -104,19 +74,12 @@
     X-From = "Netlify"
     X-Api-Key = "some-api-key-string"
 
-# Role-based redirects does not have a 'to' property.
-# TC: Removed all lines
-#[[redirects]]
-  # from = "/gated-path"
-  # status = 200
-  # conditions = {Role = ["admin"]}
-  # force = true
-
 # The following redirect is intended for use with most SPAs that handle
 # routing internally.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
+  # TC: Added .pub/
+  to = ".pub/index.html"
   status = 200
 
 [[headers]]

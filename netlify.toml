@@ -65,11 +65,6 @@
 # For context-specific rules, use _headers or _redirects files, which are
 # PER-DEPLOY.
 
-# A basic redirect rule
-[[redirects]]
-  from = "/*"
-  to = ".pub"
-
 # A redirect rule with all the supported properties
 # TC: Left untouched
 [[redirects]]
